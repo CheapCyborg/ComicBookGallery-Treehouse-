@@ -13,7 +13,7 @@ namespace ComicBookGallery.Controllers
 		{
 			var comicBook = new ComicBook()
 			{
-				SeriesTitle = "The Amazing Spider - Man",
+				SeriesTitle = "The Amazing Spider-Man",
 				IssueNumber = 700,
 				DescriptionHtml = "<p>Final Issue! Witness Petey get speedy and just a tad greedy</p>",
 				Artists = new Artist[]

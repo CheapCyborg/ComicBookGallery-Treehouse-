@@ -20,7 +20,7 @@ namespace ComicBookGallery.Models
 			//Read only meaning value cannot be changed by directly setting property 
 			get
 			{
-				return SeriesTitle + "#" + IssueNumber;
+				return SeriesTitle + " #" + IssueNumber;
 			}
 		}
 
