@@ -10,6 +10,17 @@ namespace ComicBookGallery.Controllers
 	{
 		public ActionResult Detail()
 		{
+			//Properties start with capital 
+			//Supplying data to view
+			ViewBag.SeriesTitle = "The Amazing Spider-Man";
+			ViewBag.IssueNumber = 700;
+			ViewBag.Description = "<p>Final Issue! Witness Petey get speedy and just a tad greedy</p>";
+			ViewBag.Artists = new string[]
+			{
+				"me",
+				"awesome"
+			};
+
 			return View();
 		}
 	}
