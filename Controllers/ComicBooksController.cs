@@ -1,4 +1,5 @@
-﻿using ComicBookGallery.Models;
+﻿using ComicBookGallery.Data;
+using ComicBookGallery.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +10,19 @@ namespace ComicBookGallery.Controllers
 {
 	public class ComicBooksController : Controller
 	{
-		public ActionResult Detail()
+		private ComicBookRepository _comicBookRepository = null;
+		
+		public ComicBooksController()
 		{
-			var comicBook = new ComicBook()
+			_comicBookRepository = new ComicBookRepository();
+		}
+		public ActionResult Detail(int? id) //?int creates nullable type
+		{
+			if (id == null)
 			{
-				SeriesTitle = "The Amazing Spider-Man",
-				IssueNumber = 700,
-				DescriptionHtml = "<p>Final Issue! Witness Petey get speedy and just a tad greedy</p>",
-				Artists = new Artist[]
-				{
-					 new Artist(){Name = "Me", Role = "awesome"},
-					 new Artist(){Name = "dan", Role = "wdw"},
-					 new Artist(){Name = "wrvw", Role = "wf"},
-					 new Artist(){Name = "wefwq", Role = "wfwf"},
-				}
-			};
+				return HttpNotFound();
+			}
+			var comicBook = _comicBookRepository.GetComicBook(id.Value); //Must use .Value to get value of nullable type or cast like ((int)id)
 			return View(comicBook);
 		}
 	}
