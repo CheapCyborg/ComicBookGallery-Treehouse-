@@ -1,0 +1,31 @@
+﻿@{
+		var seriesTitle = "The Amazing Spider-Man";
+		var issueNumber = 700;
+		var description = "<p>Final Issue! Witness Petey get speedy and just a tad greedy</p>";
+		var artists = new string[]
+		{
+			"me",
+			"awesome"
+		};
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+		<h1>@seriesTitle</h1>
+		<h2>Issue #@issueNumber</h2>
+
+		<h5>Description:</h5>
+		<div>@Html.Raw(description)</div>
+
+		<h5>Artists:</h5>
+		<div>@artists</div>
+    </div>
+</body>
+</html>
